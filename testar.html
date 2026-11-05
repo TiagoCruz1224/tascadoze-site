@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ajuda a testar a Tasca do Zé</title>
+<meta name="description" content="A Tasca do Zé está quase na Play Store. Ajuda a testá-la: são dois minutos para entrar e uns minutos por dia a jogar.">
+<link rel="icon" href="icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --azul: #133461; --cal: #fbf6ea; --bege: #e3d8c3; --ouro: #f2b640; --tinta: #1f2533; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body { min-height: 100vh; display: flex; flex-direction: column; align-items: center;
+    padding: 32px 16px; background: var(--azul) url("azulejo.png") repeat; background-size: 96px;
+    font: 700 17px/1.5 'Nunito', system-ui, sans-serif; color: #c3cde0; text-align: center; }
+  .logo { width: min(320px, 80vw); height: auto; }
+  h1 { margin: 18px 0 8px; font: 800 30px/1.15 'Baloo 2', sans-serif; color: #fff; }
+  .intro { max-width: 520px; margin: 0 0 24px; font-size: 18px; color: #e8edf6; }
+  .passos { width: min(520px, 100%); margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; text-align: left; }
+  .passos li { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; background: var(--cal); border-radius: 16px;
+    box-shadow: 0 5px 0 var(--bege); color: var(--tinta); }
+  .num { flex: none; width: 36px; height: 36px; border-radius: 50%; background: var(--ouro); display: flex; align-items: center; justify-content: center;
+    font: 800 20px 'Baloo 2', sans-serif; color: var(--azul); }
+  .passos b { color: var(--azul); }
+  .botao { display: inline-block; margin-top: 10px; padding: 10px 20px; background: var(--azul); border-radius: 14px; border-bottom: 4px solid #0b2143;
+    font: 800 17px 'Baloo 2', sans-serif; color: #fff; text-decoration: none; }
+  .botao:hover { filter: brightness(1.15); }
+  .nota { max-width: 520px; margin-top: 22px; font-size: 15px; }
+  footer { margin-top: 36px; font-size: 14px; }
+  footer a { color: #fff; }
+</style>
+</head>
+<body>
+  <a href="./"><img class="logo" src="logo.png" alt="Tasca do Zé" width="1040" height="660"></a>
+  <h1>Ajuda a abrir a tasca</h1>
+  <p class="intro">A Tasca do Zé está quase na Play Store, mas a Google só a deixa entrar depois de um grupo de pessoas a testar durante duas semanas. Precisamos de ti: são dois minutos para entrar e uns minutos por dia a jogar.</p>
+  <ol class="passos">
+    <li><span class="num">1</span><div><b>Entra no grupo de testadores</b>, com a conta Google que usas no telemóvel. É só carregar em «Aderir ao grupo».<br><a class="botao" href="https://groups.google.com/g/tasca-do-ze-testadores">Entrar no grupo</a></div></li>
+    <li><span class="num">2</span><div><b>Aceita o convite do teste</b>, com a mesma conta. A página diz «Tornar-se testador». Damos acesso a quem entra no grupo à mão, por isso pode levar até um dia: se a página disser que não tens acesso, volta mais tarde.<br><a class="botao" href="https://play.google.com/apps/testing/pt.tascadoze.jogo">Aceitar o convite</a></div></li>
+    <li><span class="num">3</span><div><b>Instala o jogo</b> pela Play Store, como outro qualquer. Pode demorar uns minutos a aparecer depois de aceitares.<br><a class="botao" href="https://play.google.com/store/apps/details?id=pt.tascadoze.jogo">Abrir na Play Store</a></div></li>
+    <li><span class="num">4</span><div><b>Joga um bocadinho todos os dias</b>, durante duas semanas. Não é preciso muito: abrir, tirar uns finos, ver como vai a tasca. E se encontrares algum problema ou tiveres uma ideia, deixa a tua opinião na página do jogo na Play Store, ou escreve-nos.</div></li>
+  </ol>
+  <p class="nota">O jogo é grátis e não precisas de criar conta nenhuma. Para sair do teste, basta voltar à página do convite e carregar em «Sair do programa».</p>
+  <footer><a href="./">Tasca do Zé</a> · <a href="privacidade.html">Privacidade</a> · <a href="mailto:fertuayt@gmail.com">fertuayt@gmail.com</a></footer>
+</body>
+</html>
