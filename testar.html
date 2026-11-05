@@ -5,44 +5,82 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ajuda a testar a Tasca do Zé</title>
 <meta name="description" content="A Tasca do Zé está quase na Play Store. Ajuda a testá-la: são dois minutos para entrar e uns minutos por dia a jogar.">
+<meta property="og:title" content="Ajuda a abrir a Tasca do Zé">
+<meta property="og:description" content="Um jogo de gerir uma tasca portuguesa. Precisamos de testadores para o pôr na Play Store.">
+<meta property="og:image" content="https://tiagocruz1224.github.io/tascadoze-site/media/trailer.jpg">
 <link rel="icon" href="icone.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --azul: #133461; --cal: #fbf6ea; --bege: #e3d8c3; --ouro: #f2b640; --tinta: #1f2533; }
+  :root { --azul: #133461; --azul-escuro: #0b2143; --cal: #fbf6ea; --bege: #e3d8c3; --ouro: #f2b640; --tinta: #1f2533; }
   * { box-sizing: border-box; }
   html, body { margin: 0; min-height: 100%; }
-  body { min-height: 100vh; display: flex; flex-direction: column; align-items: center;
-    padding: 32px 16px; background: var(--azul) url("azulejo.png") repeat; background-size: 96px;
+  body { display: flex; flex-direction: column; align-items: center; padding: 28px 16px 40px;
+    background: var(--azul) url("azulejo.png") repeat; background-size: 96px;
     font: 700 17px/1.5 'Nunito', system-ui, sans-serif; color: #c3cde0; text-align: center; }
-  .logo { width: min(320px, 80vw); height: auto; }
-  h1 { margin: 18px 0 8px; font: 800 30px/1.15 'Baloo 2', sans-serif; color: #fff; }
-  .intro { max-width: 520px; margin: 0 0 24px; font-size: 18px; color: #e8edf6; }
-  .passos { width: min(520px, 100%); margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; text-align: left; }
+  main { width: min(640px, 100%); display: flex; flex-direction: column; align-items: center; gap: 22px; }
+  .logo { width: min(300px, 75vw); height: auto; }
+  h1 { margin: 0; font: 800 clamp(28px, 7vw, 38px)/1.1 'Baloo 2', sans-serif; color: #fff; }
+  h2 { margin: 6px 0 0; font: 800 24px/1.2 'Baloo 2', sans-serif; color: #fff; }
+  .intro { margin: 0; font-size: 18px; color: #e8edf6; }
+  .video { width: 100%; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; background: var(--azul-escuro);
+    box-shadow: 0 6px 0 var(--azul-escuro), 0 14px 30px rgba(0,0,0,.35); }
+  .video video { width: 100%; height: 100%; display: block; object-fit: cover; }
+  .guardanapo { padding: 10px 20px; background: var(--cal); border-radius: 8px; transform: rotate(-2deg);
+    box-shadow: 0 5px 0 var(--bege); font: 800 20px 'Baloo 2', sans-serif; color: var(--azul); }
+  .jogo { margin: 0; max-width: 540px; font-size: 17px; color: #e8edf6; }
+  .passos { width: 100%; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; text-align: left; }
   .passos li { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; background: var(--cal); border-radius: 16px;
     box-shadow: 0 5px 0 var(--bege); color: var(--tinta); }
   .num { flex: none; width: 36px; height: 36px; border-radius: 50%; background: var(--ouro); display: flex; align-items: center; justify-content: center;
     font: 800 20px 'Baloo 2', sans-serif; color: var(--azul); }
   .passos b { color: var(--azul); }
-  .botao { display: inline-block; margin-top: 10px; padding: 10px 20px; background: var(--azul); border-radius: 14px; border-bottom: 4px solid #0b2143;
+  .botao { display: inline-block; margin-top: 10px; padding: 10px 20px; background: var(--azul); border-radius: 14px; border-bottom: 4px solid var(--azul-escuro);
     font: 800 17px 'Baloo 2', sans-serif; color: #fff; text-decoration: none; }
   .botao:hover { filter: brightness(1.15); }
-  .nota { max-width: 520px; margin-top: 22px; font-size: 15px; }
-  footer { margin-top: 36px; font-size: 14px; }
+  .botao-ouro { background: var(--ouro); border-bottom-color: #b8841f; color: var(--azul); padding: 14px 30px; font-size: 21px; margin: 0; }
+  .capturas { width: 100%; display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 2px 14px; }
+  .capturas img { flex: none; width: min(46vw, 200px); height: auto; border-radius: 14px; scroll-snap-align: center;
+    box-shadow: 0 5px 0 var(--azul-escuro); }
+  .nota { margin: 0; font-size: 15px; }
+  footer { margin-top: 10px; font-size: 14px; }
   footer a { color: #fff; }
 </style>
 </head>
 <body>
+<main>
   <a href="./"><img class="logo" src="logo.png" alt="Tasca do Zé" width="1040" height="660"></a>
   <h1>Ajuda a abrir a tasca</h1>
-  <p class="intro">A Tasca do Zé está quase na Play Store, mas a Google só a deixa entrar depois de um grupo de pessoas a testar durante duas semanas. Precisamos de ti: são dois minutos para entrar e uns minutos por dia a jogar.</p>
+  <p class="intro">A Tasca do Zé está quase na Play Store, mas a Google só a deixa entrar depois de um grupo de pessoas a testar durante duas semanas. Precisamos de ti!</p>
+
+  <div class="video">
+    <video src="media/trailer.mp4" poster="media/trailer.jpg" controls playsinline preload="metadata"></video>
+  </div>
+
+  <div class="guardanapo">«Zé, o país é grande.»</div>
+  <p class="jogo">Herdaste a tasca do avô em Bragança. Tira finos, serve bifanas e alheiras, leva o bêbedo à porta, enxota o gatuno à vassourada e abre tasca em todo o país, de Bragança a Faro, cada terra com a sua especialidade. Há Santos Populares, Queima das Fitas, caloiradas e o primo que vem de França encher as mesas.</p>
+
+  <h2>Como ajudar, em quatro passos</h2>
   <ol class="passos">
     <li><span class="num">1</span><div><b>Entra no grupo de testadores</b>, com a conta Google que usas no telemóvel. É só carregar em «Aderir ao grupo».<br><a class="botao" href="https://groups.google.com/g/tasca-do-ze-testadores">Entrar no grupo</a></div></li>
     <li><span class="num">2</span><div><b>Aceita o convite do teste</b>, com a mesma conta. A página diz «Tornar-se testador». Damos acesso a quem entra no grupo à mão, por isso pode levar até um dia: se a página disser que não tens acesso, volta mais tarde.<br><a class="botao" href="https://play.google.com/apps/testing/pt.tascadoze.jogo">Aceitar o convite</a></div></li>
     <li><span class="num">3</span><div><b>Instala o jogo</b> pela Play Store, como outro qualquer. Pode demorar uns minutos a aparecer depois de aceitares.<br><a class="botao" href="https://play.google.com/store/apps/details?id=pt.tascadoze.jogo">Abrir na Play Store</a></div></li>
-    <li><span class="num">4</span><div><b>Joga um bocadinho todos os dias</b>, durante duas semanas. Não é preciso muito: abrir, tirar uns finos, ver como vai a tasca. E se encontrares algum problema ou tiveres uma ideia, deixa a tua opinião na página do jogo na Play Store, ou escreve-nos.</div></li>
+    <li><span class="num">4</span><div><b>Joga um bocadinho todos os dias</b>, durante duas semanas. Não é preciso muito: abrir, tirar uns finos, ver como vai a tasca. Se encontrares algum problema ou tiveres uma ideia, deixa a tua opinião na página do jogo na Play Store, ou escreve-nos.</div></li>
   </ol>
+
+  <a class="botao botao-ouro" href="https://groups.google.com/g/tasca-do-ze-testadores">Quero testar</a>
+
+  <h2>Como é por dentro</h2>
+  <div class="capturas">
+    <img src="media/captura1.jpg" alt="Herdaste a tasca do avô: a tasca cheia nos Santos Populares" width="540" height="960" loading="lazy">
+    <img src="media/captura2.jpg" alt="O primo chegou de Paris com a família toda" width="540" height="960" loading="lazy">
+    <img src="media/captura3.jpg" alt="Gatuno na caixa? Vassourada nele!" width="540" height="960" loading="lazy">
+    <img src="media/captura4.jpg" alt="Noites de fados, e a casa paga mais" width="540" height="960" loading="lazy">
+    <img src="media/captura5.jpg" alt="De Bragança a Faro: o mapa para abrir tasca em todo o país" width="540" height="960" loading="lazy">
+  </div>
+
   <p class="nota">O jogo é grátis e não precisas de criar conta nenhuma. Para sair do teste, basta voltar à página do convite e carregar em «Sair do programa».</p>
   <footer><a href="./">Tasca do Zé</a> · <a href="privacidade.html">Privacidade</a> · <a href="mailto:fertuayt@gmail.com">fertuayt@gmail.com</a></footer>
+</main>
 </body>
 </html>
